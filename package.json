@@ -2,6 +2,10 @@
   "name": "forkify",
   "version": "1.0.0",
   "description": "Recipe application",
+  "main": "unrelated.js",
+  "targets": {
+    "main": false
+  },
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html"
