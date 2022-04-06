@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/daphneruth/forkify#readme",
   "dependencies": {
-    "parcel": "^2.4.1"
+    "parcel": "^2.4.1",
+    "sass": "^1.49.11"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.4.1"
