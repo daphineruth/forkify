@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html",
-    "build" :"parcel build index.html"
+    "build": "parcel build index.html"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/daphneruth/forkify/issues"
   },
-  "homepage": "https://github.com/daphneruth/forkify#readme"
+  "homepage": "https://github.com/daphneruth/forkify#readme",
+  
+  "dependencies": {
+    "parcel": "^2.4.1"
+  }
 }
