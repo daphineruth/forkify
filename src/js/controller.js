@@ -23,6 +23,8 @@ const renderSpinner = function(parentEl) {
           </svg>
         </div>
   `;
+  parentEl.innerHTML = '';
+  parentEl.insertAdjacentHTML('afterbegin', markup);
 }
 
 //Loading recipe
