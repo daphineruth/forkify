@@ -127,6 +127,7 @@ const markup = `<figure class="recipe__fig">
             </svg>
           </a>
         </div>`;
+        recipeContainer.innerHTML = '';
         recipeContainer.insertAdjacentHTML("afterbegin", markup);
 
 
