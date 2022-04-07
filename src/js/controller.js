@@ -1,3 +1,4 @@
+'use strict';
 
 //import icons  from '../img/icons.svg';//parcel 1
 import icons  from 'url:../img/icons.svg';// parcel 2
@@ -26,7 +27,9 @@ const showRecipe= async function() {
        
      
      console.log (res, data);
-     let (recipe) = data.data;
+
+    // let (recipe) = data.data;
+
      recipe = {
        id: recipe.id,
        title: recipe.title,
@@ -49,14 +52,14 @@ const markup = `<figure class="recipe__fig">
 <div class="recipe__details">
 <div class="recipe__info">
   <svg class="recipe__info-icon">
-    <use href="src/img/icons.svg#icon-clock"></use>
+    <use href="${icons}-clock"></use>
   </svg>
   <span class="recipe__info-data recipe__info-data--minutes">${recipe.cookingTime}</span>
   <span class="recipe__info-text">minutes</span>
 </div>
 <div class="recipe__info">
   <svg class="recipe__info-icon">
-    <use href="src/img/icons.svg#icon-users"></use>
+    <use href="${icons}-users"></use>
   </svg>
   <span class="recipe__info-data recipe__info-data--people">${recipe.serving}</span>
   <span class="recipe__info-text">servings</span> 
@@ -108,7 +111,7 @@ const markup = `<figure class="recipe__fig">
 
             <li class="recipe__ingredient">
               <svg class="recipe__icon">
-                <use href="src/img/icons.svg#icon-check"></use>
+                <use href="${icons}-check"></use>
               </svg>
               <div class="recipe__quantity">0.5</div>
               <div class="recipe__description">
@@ -133,7 +136,7 @@ const markup = `<figure class="recipe__fig">
           >
             <span>Directions</span>
             <svg class="search__icon">
-              <use href="src/img/icons.svg#icon-arrow-right"></use>
+              <use href="${icons}-arrow-right"></use>
             </svg>
           </a>
         </div>`;
