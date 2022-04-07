@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/daphneruth/forkify#readme",
   "dependencies": {
+    "core-js": "^3.21.1",
     "parcel": "^2.4.1",
     "sass": "^1.49.11"
   },
