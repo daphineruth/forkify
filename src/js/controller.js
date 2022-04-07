@@ -36,9 +36,9 @@ const showRecipe= async function() {
 console.log(recipe)
 //rendering recipe
 const markup = `<figure class="recipe__fig">
-<img src="src/img/test-1.jpg" alt="Tomato" class="recipe__img" />
+<img src= "${recipe.Image}" alt="${recipe.title}" class="recipe__img" />
 <h1 class="recipe__title">
-  <span>Pasta with tomato cream sauce</span>
+  <span>${title}</span>
 </h1>
 </figure>
 
@@ -47,7 +47,7 @@ const markup = `<figure class="recipe__fig">
   <svg class="recipe__info-icon">
     <use href="src/img/icons.svg#icon-clock"></use>
   </svg>
-  <span class="recipe__info-data recipe__info-data--minutes">45</span>
+  <span class="recipe__info-data recipe__info-data--minutes">${cooking_time}</span>
   <span class="recipe__info-text">minutes</span>
 </div>
 <div class="recipe__info">
