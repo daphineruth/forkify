@@ -94,11 +94,11 @@ const markup = `<figure class="recipe__fig">
               <div class="recipe__quantity">${ing.quantity}</div>
               <div class="recipe__description">
                 <span class="recipe__unit">${ing.unit}</span>
-                pasta
+                ${ing.description}
               </div>
             </li>
             `
-          })}
+          }).join('')};
             
 
             <li class="recipe__ingredient">
