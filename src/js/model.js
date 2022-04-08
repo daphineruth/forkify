@@ -1,3 +1,4 @@
+import { async } from 'regenerator-runtime';
  export const view = {
     recipe: {}
 };
