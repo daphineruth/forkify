@@ -39,6 +39,9 @@ const showRecipe= async function() {
     if(!id) return;
     renderSpinner(recipeContainer);
 
+    await model.loadRecipe(id);
+    const {recipe} = model.state;
+
      const res = await fetch(` https://forkify-api.herokuapp.com/api/v2/recipes/${id}>`
      );
      const data = await res.json();
