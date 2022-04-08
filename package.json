@@ -22,7 +22,9 @@
   "homepage": "https://github.com/daphneruth/forkify#readme",
   "dependencies": {
     "core-js": "^3.21.1",
+    "fractional": "^1.0.0",
     "parcel": "^2.4.1",
+    "regenerator": "^0.14.7",
     "sass": "^1.49.11"
   },
   "devDependencies": {
