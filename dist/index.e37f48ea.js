@@ -515,9 +515,10 @@ function hmrAcceptRun(bundle, id) {
 
 },{}],"aenu9":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-//import icons  from '../img/icons.svg';//parcel 1
 var _webImmediateJs = require("core-js/modules/web.immediate.js"); //window.addEventListener('hashChange', showRecipe);
  //window.addEventListener('load', showRecipe)
+var _modelJs = require("./model.js");
+//import icons  from '../img/icons.svg';//parcel 1
 var _iconsSvg = require("url:../img/icons.svg"); // parcel 2
 var _iconsSvgDefault = parcelHelpers.interopDefault(_iconsSvg);
 const recipeContainer = document.querySelector('.recipe');
@@ -547,11 +548,13 @@ const showRecipe = (async function() {
         console.log(id);
         if (!id) return;
         renderSpinner(recipeContainer);
-        await model.loadRecipe(id);
-        const { recipe  } = model.state;
+        ////loading recipe
+        await _modelJs.loadRecipe(id);
+        const { recipe  } = _modelJs.state;
         //rendering recipe
-        const markup = `<figure class="recipe__fig">
-<img src= "${recipe.Image}" alt="${recipe.title}" class="recipe__img" />
+        const markup = `
+<figure class="recipe__fig">
+ <img src= "${recipe.Image}" alt="${recipe.title}" class="recipe__img" />
 <h1 class="recipe__title">
   <span>${title}</span>
 </h1>
@@ -656,7 +659,7 @@ const showRecipe = (async function() {
 })['load'].forEach((ev)=>window.addEventListener(ev, showRecipe)
 );
 
-},{"core-js/modules/web.immediate.js":"49tUX","url:../img/icons.svg":"loVOp","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"49tUX":[function(require,module,exports) {
+},{"core-js/modules/web.immediate.js":"49tUX","url:../img/icons.svg":"loVOp","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./model.js":"Y4A21"}],"49tUX":[function(require,module,exports) {
 var $ = require('../internals/export');
 var global = require('../internals/global');
 var task = require('../internals/task');
@@ -1762,6 +1765,39 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}]},["ddCAb","aenu9"], "aenu9", "parcelRequire3a11")
+},{}],"Y4A21":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "view", ()=>view
+);
+parcelHelpers.export(exports, "loadRecipe", ()=>loadRecipe
+);
+const view = {
+    recipe: {}
+};
+const loadRecipe = async function(id) {
+    try {
+        const res = await fetch(` https://forkify-api.herokuapp.com/api/v2/recipes/${id}>`);
+        const data = await res.json();
+        if (res.ok) throw new Error(`${data.message} (${res.status})`);
+        const { recipe  } = data.data;
+        // let (recipe) = data.data;
+        state.recipe = {
+            id: recipe.id,
+            title: recipe.title,
+            publisher: recipe.publisher,
+            sourceUrl: recipe.sourceUrl,
+            Image: recipe.Image_url,
+            serving: recipe.serving,
+            cookingTime: recipe.cooking_time,
+            ingredients: recipe.ingredients
+        };
+        console.log(recipe);
+    } catch (err) {
+        alert(err);
+    }
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["ddCAb","aenu9"], "aenu9", "parcelRequire3a11")
 
 //# sourceMappingURL=index.e37f48ea.js.map

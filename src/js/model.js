@@ -3,6 +3,7 @@
 };
 
 export const loadRecipe = async function(id){
+    try{
     const res = await fetch(
         ` https://forkify-api.herokuapp.com/api/v2/recipes/${id}>`
     );
@@ -25,5 +26,11 @@ export const loadRecipe = async function(id){
       cookingTime: recipe.cooking_time,
       ingredients: recipe.ingredients
     }
-console.log(recipe)
+
+    console.log(recipe)
+
+} catch(err){
+    alert(err);
 }
+}
+
