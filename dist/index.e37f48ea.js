@@ -1708,6 +1708,9 @@ class RecipeView {
     #data;
     render(data) {
         this.#data = data;
+        const markup = this.#generateMarkup;
+        recipeContainer.innerHTML = '';
+        recipeContainer.insertAdjacentHTML("afterbegin", markup);
     }
      #generateMarkup() {
         var ing;

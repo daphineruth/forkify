@@ -4,6 +4,10 @@
   #data;
   render(data) {
     this.#data = data;
+    const markup = this.#generateMarkup;
+    recipeContainer.innerHTML = '';
+        recipeContainer.insertAdjacentHTML("afterbegin", markup);
+
   }
 
   #generateMarkup()
@@ -109,9 +113,7 @@ return
             </svg>
           </a>
         </div>`;
-        recipeContainer.innerHTML = '';
-        recipeContainer.insertAdjacentHTML("afterbegin", markup);
-
+        
 
   }
 }
