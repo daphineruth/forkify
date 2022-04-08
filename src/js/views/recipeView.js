@@ -9,12 +9,12 @@
   #generateMarkup()
   
   {
-
-    const markup = `
+return
+    return `
     <figure class="recipe__fig">
-     <img src= "${recipe.Image}" alt="${recipe.title}" class="recipe__img" />
+     <img src= "${this.#data.Image}" alt="${this.#data.title}" class="recipe__img" />
     <h1 class="recipe__title">
-      <span>${title}</span>
+      <span>${this.#data.title}</span>
     </h1>
     </figure>
     

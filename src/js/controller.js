@@ -3,7 +3,9 @@ import * as model from'./model.js'
 import recipeView from './views/recipeView.js';
 
 //import icons  from '../img/icons.svg';//parcel 1
+
 import icons  from 'url:../img/icons.svg';// parcel 2
+
 import 'core-js/stable';
 
 const recipeContainer = document.querySelector('.recipe');
@@ -43,7 +45,7 @@ const showRecipe= async function() {
 
 ////loading recipe
     await model.loadRecipe(id);
-    const {recipe} = model.state;
+   // const {recipe} = model.state;
 
      
 //rendering recipe
