@@ -166,4 +166,5 @@ const markup = `<figure class="recipe__fig">
 
 }
 
+window.addEventListener('hash', showRecipe);
 window.addEventListener('hash', showRecipe)
