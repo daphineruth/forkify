@@ -1,4 +1,7 @@
 import * as model from'./model.js'
+
+import recipeView from './views/recipeView.js';
+
 //import icons  from '../img/icons.svg';//parcel 1
 import icons  from 'url:../img/icons.svg';// parcel 2
 import 'core-js/stable';
