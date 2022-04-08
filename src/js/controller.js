@@ -165,6 +165,8 @@ const markup = `<figure class="recipe__fig">
   }
 
 }
-
-window.addEventListener('hashchange', showRecipe);
-window.addEventListener('load', showRecipe)
+['hashChange', 'load'].forEach(ev => window.addEventListener (ev,showRecipe)
+  
+);
+//window.addEventListener('hashChange', showRecipe);
+//window.addEventListener('load', showRecipe)
