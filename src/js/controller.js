@@ -47,6 +47,9 @@ const showRecipe= async function() {
 
      
 //rendering recipe
+recipeView.render(model.state.recipe)
+
+
 const markup = `
 <figure class="recipe__fig">
  <img src= "${recipe.Image}" alt="${recipe.title}" class="recipe__img" />
