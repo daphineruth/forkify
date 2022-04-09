@@ -1,5 +1,6 @@
 import { async } from 'regenerator-runtime';
-import { API_URL } from './config';
+import { getJSON } from './helpers.js';
+import { API_URL } from './config.js';
  export const view = {
     recipe: {}
 };
