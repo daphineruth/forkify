@@ -7,7 +7,7 @@ import { API_URL } from './config';
 export const loadRecipe = async function(id){
     try{
     const res = await fetch(
-        `${id}>`
+        `${API_URL}/${id}>`
     );
     const data = await res.json();
 
