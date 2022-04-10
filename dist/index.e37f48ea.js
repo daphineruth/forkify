@@ -524,7 +524,7 @@ var _runtime = require("regenerator-runtime/runtime");
 const recipeContainer = document.querySelector('.recipe');
 // https://forkify-api.herokuapp.com/v2
 //Loading recipe
-const controlRecipes = (async function() {
+const controlRecipes = async function() {
     try {
         const id = window.location.hash.slice(1);
         console.log(id);
@@ -538,8 +538,7 @@ const controlRecipes = (async function() {
     } catch (err) {
         alert(err);
     }
-})['load'].forEach((ev)=>window.addEventListener(ev, controlRecipes)
-);
+};
 
 },{"core-js/modules/web.immediate.js":"49tUX","./model.js":"Y4A21","./views/recipeView.js":"l60JC","regenerator-runtime/runtime":"dXNgZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"49tUX":[function(require,module,exports) {
 var $ = require('../internals/export');

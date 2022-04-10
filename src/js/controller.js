@@ -44,8 +44,5 @@ recipeView.render(model.state.recipe)
   }
 
 }
-['hashChange', 'load'].forEach(ev => window.addEventListener (ev,controlRecipes)
-  
-);
 //window.addEventListener('hashChange', showRecipe);
 //window.addEventListener('load', showRecipe)
