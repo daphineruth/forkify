@@ -2281,7 +2281,7 @@ class RecipeView {
         parentEl.innerHTML = '';
         parentEl.insertAdjacentHTML('afterbegin', markup);
     }
-    renderError() {
+    renderError(message = this.#errorMessage) {
         const markup = ` <div class="error">
     <div>
       <svg>
