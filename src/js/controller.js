@@ -2,6 +2,8 @@ import * as model from'./model.js'
 
 import recipeView from './views/recipeView.js';
 
+import searchView from './views/searchView.js';
+
 //import icons  from '../img/icons.svg';//parcel 1
 
 //import icons  from 'url:../img/icons.svg';// parcel 2
@@ -46,11 +48,11 @@ recipeView.render(model.state.recipe)
 
 }
 
-const controlSearchRecipe = async function() {
+const controlSearchResults = async function() {
 
   try{
 await model.loadSearchResults('pizza');
-console.log(state.search.results)
+console.log(model.state.search.results)
   }catch(err){
     console.log(err)
   }
