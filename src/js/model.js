@@ -8,7 +8,7 @@ import { search } from 'core-js/fn/symbol';
         query: '',
         results: []
     },
-};
+
 };
 
 export const loadRecipe = async function(id){
