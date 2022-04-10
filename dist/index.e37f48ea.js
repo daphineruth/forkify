@@ -2278,6 +2278,16 @@ class RecipeView {
         parentEl.innerHTML = '';
         parentEl.insertAdjacentHTML('afterbegin', markup);
     }
+    renderError() {
+        const markup = ` <div class="error">
+    <div>
+      <svg>
+        <use href="${_iconsSvgDefault.default}.svg#icon-alert-triangle"></use>
+      </svg>
+    </div>
+    <p>${message}</p>
+  </div> -->`;
+    }
     addHandlerRender(handler) {
         [
             'hashChange',

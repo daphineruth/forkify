@@ -26,6 +26,18 @@ import { Fraction}  from 'fractional';
     parentEl.innerHTML = '';
     parentEl.insertAdjacentHTML('afterbegin', markup);
   }
+
+  renderError() 
+  {
+    const markup = ` <div class="error">
+    <div>
+      <svg>
+        <use href="${icons}.svg#icon-alert-triangle"></use>
+      </svg>
+    </div>
+    <p>${message}</p>
+  </div> -->`
+  }
   addHandlerRender(handler) {
     
 ['hashChange', 'load'].forEach(ev => window.addEventListener (ev, handler)
