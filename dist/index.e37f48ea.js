@@ -1623,6 +1623,15 @@ const loadSearchResults = async function(query) {
     try {
         const data = await JSON(`${_configJs.API_URL}?search =${query}`);
         console.log(data);
+        data.data.recipe.map((rec)=>{
+            return {
+                id: recipe.id,
+                title: recipe.title,
+                publisher: recipe.publisher,
+                sourceUrl: recipe.sourceUrl,
+                Image: recipe.Image_url
+            };
+        });
     } catch (err) {
         console.log(err);
         throw err;

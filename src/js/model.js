@@ -1,8 +1,13 @@
 import { async } from 'regenerator-runtime';
 import { getJSON } from './helpers.js';
 import { API_URL } from './config.js';
+import { search } from 'core-js/fn/symbol';
  export const view = {
-    recipe: {}
+    recipe: {},
+    search: {
+        query: '',
+        results: []
+    },
 };
 
 export const loadRecipe = async function(id){
@@ -35,7 +40,16 @@ export const loadRecipe = async function(id){
 export const loadSearchResults = async function (query) {
     try{
  const data = await JSON (`${API_URL}?search =${query}`)
- console.log(data)
+ console.log(data);
+ data.data.recipe.map(rec =>{
+     return {
+     id: recipe.id,
+      title: recipe.title,
+      publisher: recipe.publisher,
+      sourceUrl: recipe.sourceUrl,
+      Image: recipe.Image_url
+     }
+ })
     }catch(err)
     {
         console.log(err);
