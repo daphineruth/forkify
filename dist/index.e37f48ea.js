@@ -2261,6 +2261,7 @@ class RecipeView {
     #parentElement = document.querySelector('.recipe');
     #data;
     #errorMessage = 'could not find the recipe';
+    #message = '';
     render(data) {
         this.#data = data;
         const markup = this.#generateMarkup();
@@ -2283,6 +2284,16 @@ class RecipeView {
     }
     renderError(message = this.#errorMessage) {
         const markup = ` <div class="error">
+    <div>
+      <svg>
+        <use href="${_iconsSvgDefault.default}.svg#icon-alert-triangle"></use>
+      </svg>
+    </div>
+    <p>${message}</p>
+  </div> -->`;
+    }
+    renderMessage(message = this.#Message) {
+        const markup = ` <div class="message">
     <div>
       <svg>
         <use href="${_iconsSvgDefault.default}.svg#icon-alert-triangle"></use>

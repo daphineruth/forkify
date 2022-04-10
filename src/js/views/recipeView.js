@@ -6,6 +6,7 @@ import { Fraction}  from 'fractional';
 
   #data;
   #errorMessage = 'could not find the recipe';
+  #message = '';
   render(data) {
     this.#data = data;
     const markup = this.#generateMarkup();
@@ -39,6 +40,20 @@ import { Fraction}  from 'fractional';
     <p>${message}</p>
   </div> -->`
   }
+
+  renderMessage(message = this.#Message) 
+  {
+    const markup = 
+    ` <div class="message">
+    <div>
+      <svg>
+        <use href="${icons}.svg#icon-alert-triangle"></use>
+      </svg>
+    </div>
+    <p>${message}</p>
+  </div> -->`
+  }
+
   addHandlerRender(handler) {
     
 ['hashChange', 'load'].forEach(ev => window.addEventListener (ev, handler)
