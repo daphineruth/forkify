@@ -536,6 +536,7 @@ const controlRecipes = async function() {
         _recipeViewJsDefault.default.render(_modelJs.state.recipe);
     } catch (err) {
         alert(err);
+        _recipeViewJsDefault.default.renderError(err);
     }
 };
 const init = function() {
@@ -1612,7 +1613,8 @@ const loadRecipe = async function(id) {
         };
         console.log(recipe);
     } catch (err) {
-        console.error(err);
+        console.log(err);
+        throw err;
     }
 };
 
