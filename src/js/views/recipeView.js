@@ -44,7 +44,7 @@ import { Fraction}  from 'fractional';
   renderMessage(message = this.#Message) 
   {
     const markup = 
-    ` <div class="message">
+    ` <div class="message ">
     <div>
       <svg>
         <use href="${icons}.svg#icon-alert-triangle"></use>

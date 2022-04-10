@@ -1590,6 +1590,8 @@ parcelHelpers.export(exports, "view", ()=>view
 );
 parcelHelpers.export(exports, "loadRecipe", ()=>loadRecipe
 );
+parcelHelpers.export(exports, "loadSearchResults", ()=>loadSearchResults
+);
 var _regeneratorRuntime = require("regenerator-runtime");
 var _helpersJs = require("./helpers.js");
 var _configJs = require("./config.js");
@@ -1617,6 +1619,16 @@ const loadRecipe = async function(id) {
         throw err;
     }
 };
+const loadSearchResults = async function(query) {
+    try {
+        const data = await JSON(`${_configJs.API_URL}?search =${query}`);
+        console.log(data);
+    } catch (err) {
+        console.log(err);
+        throw err;
+    }
+};
+loadSearchResults('pizza');
 
 },{"regenerator-runtime":"dXNgZ","./helpers.js":"hGI1E","./config.js":"k5Hzs","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dXNgZ":[function(require,module,exports) {
 /**
@@ -2293,7 +2305,7 @@ class RecipeView {
   </div> -->`;
     }
     renderMessage(message = this.#Message) {
-        const markup = ` <div class="message">
+        const markup = ` <div class="message ">
     <div>
       <svg>
         <use href="${_iconsSvgDefault.default}.svg#icon-alert-triangle"></use>
