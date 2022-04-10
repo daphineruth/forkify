@@ -44,5 +44,7 @@ recipeView.render(model.state.recipe)
   }
 
 }
-//window.addEventListener('hashChange', showRecipe);
-//window.addEventListener('load', showRecipe)
+const init = function() {
+recipeView.addHandlerRender(controlRecipes )
+}
+init()

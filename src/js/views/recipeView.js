@@ -15,7 +15,7 @@ import { Fraction}  from 'fractional';
   #clear() {
     this.#parentElement.innerHTML = '';
   }
-   renderSpinner = function() {
+   renderSpinner() {
     const markup = `
     <div class="spinner">
             <svg>
