@@ -45,6 +45,18 @@ recipeView.render(model.state.recipe)
   }
 
 }
+
+const controlSearchRecipe = async function() {
+
+  try{
+await model.loadSearchResults('pizza');
+console.log(state.search.results)
+  }catch(err){
+    console.log(err)
+  }
+}
+controlSearchRecipe();
+
 const init = function() {
 recipeView.addHandlerRender(controlRecipes )
 }
