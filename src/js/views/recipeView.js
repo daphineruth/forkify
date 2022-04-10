@@ -26,6 +26,12 @@ import { Fraction}  from 'fractional';
     parentEl.innerHTML = '';
     parentEl.insertAdjacentHTML('afterbegin', markup);
   }
+  addHandlerRender(handler) {
+    
+['hashChange', 'load'].forEach(ev => window.addEventListener (ev, handler)
+  
+);
+  }
 
   #generateMarkup()
   
