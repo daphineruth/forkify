@@ -5,6 +5,7 @@ import { Fraction}  from 'fractional';
   #parentElement =  document.querySelector('.recipe');
 
   #data;
+  #errorMessage = 'could not find the recipe';
   render(data) {
     this.#data = data;
     const markup = this.#generateMarkup();

@@ -536,7 +536,7 @@ const controlRecipes = async function() {
         _recipeViewJsDefault.default.render(_modelJs.state.recipe);
     } catch (err) {
         alert(err);
-        _recipeViewJsDefault.default.renderError(err);
+        _recipeViewJsDefault.default.renderError();
     }
 };
 const init = function() {
@@ -2260,6 +2260,7 @@ var _fractional = require("fractional");
 class RecipeView {
     #parentElement = document.querySelector('.recipe');
     #data;
+    #errorMessage = 'could not find the recipe';
     render(data) {
         this.#data = data;
         const markup = this.#generateMarkup();
