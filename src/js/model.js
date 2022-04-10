@@ -9,6 +9,7 @@ import { search } from 'core-js/fn/symbol';
         results: []
     },
 };
+};
 
 export const loadRecipe = async function(id){
     try{
