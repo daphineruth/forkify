@@ -4,6 +4,8 @@ import recipeView from './views/recipeView.js';
 
 import searchView from './views/searchView.js';
 
+import resultsview from './views/resultsview.js';
+
 //import icons  from '../img/icons.svg';//parcel 1
 
 //import icons  from 'url:../img/icons.svg';// parcel 2
@@ -22,7 +24,7 @@ const recipeContainer = document.querySelector('.recipe');
 const controlRecipes= async function() {
 
   try{
-
+  resultsview.renderSpinner
     const id = window.location.hash.slice(1);
     console.log(id);
     
