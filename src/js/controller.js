@@ -13,6 +13,10 @@ import resultsview from './views/resultsview.js';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
+if(module.hot) {
+  module.hot.accept();
+}
+
 const recipeContainer = document.querySelector('.recipe');
 
 
@@ -57,7 +61,7 @@ const controlSearchResults = async function() {
       if(!query) return;
 
 await model.loadSearchResults('query');
-console.log(model.state.search.results)
+
   }catch(err){
     console.log(err)
   }

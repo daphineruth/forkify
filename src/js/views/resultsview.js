@@ -14,7 +14,7 @@ return this._data.map(this._generateMarkupPreview).join('')
 _generateMarkupPreview(results) {
     return`
     <li class="preview">
-<a class="preview__link preview__link--active" href="${results.id}">
+<a class="preview__link preview__link" href="${results.id}">
   <figure class="preview__fig">
     <img src="${results.image}" alt=">${results.title}" />
   </figure>
