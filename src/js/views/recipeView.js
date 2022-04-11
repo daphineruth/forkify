@@ -4,12 +4,13 @@ import View from './View';
 import icons  from 'url:../../img/icons.svg';
 import { Fraction}  from 'fractional';
  
- class RecipeView {
+ class RecipeView  extends View{
   _parentElement =  document.querySelector('.recipe');
 
   _data;
   _errorMessage = 'could not find the recipe';
   _message = '';
+  
   render(data) {
     this._data = data;
     const markup = this._generateMarkup();
@@ -18,7 +19,7 @@ import { Fraction}  from 'fractional';
 
   }
   _clear() {
-    this.#parentElement.innerHTML = '';
+    this._parentElement.innerHTML = '';
   }
    renderSpinner() {
     const markup = `
