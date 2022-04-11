@@ -5,11 +5,11 @@ import icons  from 'url:../../img/icons.svg';
 import { Fraction}  from 'fractional';
  
  class RecipeView {
-  #parentElement =  document.querySelector('.recipe');
+  _parentElement =  document.querySelector('.recipe');
 
-  #data;
-  #errorMessage = 'could not find the recipe';
-  #message = '';
+  _data;
+  _errorMessage = 'could not find the recipe';
+  _message = '';
   render(data) {
     this._data = data;
     const markup = this._generateMarkup();
@@ -32,7 +32,7 @@ import { Fraction}  from 'fractional';
     parentEl.insertAdjacentHTML('afterbegin', markup);
   }
 
-  renderError(message = this.#errorMessage) 
+  renderError(message = this._errorMessage) 
   {
     const markup = ` <div class="error">
     <div>
@@ -44,7 +44,7 @@ import { Fraction}  from 'fractional';
   </div> -->`
   }
 
-  renderMessage(message = this.#Message) 
+  renderMessage(message = this._Message) 
   {
     const markup = 
     ` <div class="message 
