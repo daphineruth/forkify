@@ -7,9 +7,11 @@ class resultsView extends View  {
 
   _generateMarkup() {
 
-return`
-
-<li class="preview">
+return this._data.map(this._generateMarkupPreview).join('')
+  }
+_generateMarkupPreview() {
+    return`
+    <li class="preview">
 <a class="preview__link preview__link--active" href="#23456">
   <figure class="preview__fig">
     <img src="src/img/test-1.jpg" alt="Test" />
@@ -26,6 +28,7 @@ return`
 </a>
 </li>
 `
+}
 };
-};
+
 export default new resultsView();
