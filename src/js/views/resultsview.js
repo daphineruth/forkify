@@ -5,7 +5,10 @@ import View from "./View";
 class resultsView extends View  {
 
     _parentElement = document.querySelector('.results')
-
+    _data;
+    _errorMessage = 'no recipe for your query';
+    _message = '';
+  
 
   _generateMarkup() {
 
