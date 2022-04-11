@@ -11,13 +11,13 @@ import { Fraction}  from 'fractional';
   #errorMessage = 'could not find the recipe';
   #message = '';
   render(data) {
-    this.#data = data;
-    const markup = this.#generateMarkup();
-    this.#clear();
-        this.#parentElement.insertAdjacentHTML("afterbegin", markup);
+    this._data = data;
+    const markup = this._generateMarkup();
+    this._clear();
+        this._parentElement.insertAdjacentHTML("afterbegin", markup);
 
   }
-  #clear() {
+  _clear() {
     this.#parentElement.innerHTML = '';
   }
    renderSpinner() {
@@ -65,7 +65,7 @@ import { Fraction}  from 'fractional';
 );
   }
 
-  #generateMarkup()
+  _generateMarkup()
   
   {
 return
@@ -121,7 +121,7 @@ return
         <div class="recipe__ingredients">
           <h2 class="heading--2">Recipe ingredients</h2>
           <ul class="recipe__ingredient-list">
-          ${this.#data.ingredients.map(this.#generateMarkupIngredient) .join('')};
+          ${this._data.ingredients.map(this._generateMarkupIngredient) .join('')};
             
 
             <li class="recipe__ingredient">
@@ -158,7 +158,7 @@ return
         
 
   }
-  #generateMarkupIngredient(ing) {
+  _generateMarkupIngredient(ing) {
         
               
       return `
