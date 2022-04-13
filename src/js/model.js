@@ -2,6 +2,7 @@ import { async } from 'regenerator-runtime';
 import { getJSON } from './helpers.js';
 import { API_URL } from './config.js';
 import { search } from 'core-js/fn/symbol';
+import { state } from '../../../starter fle/complete-javascript-course/18-forkify/final/src/js/model.js';
  export const view = {
     recipe: {},
     search: {
@@ -60,4 +61,11 @@ export const loadSearchResults = async function (query) {
        
     }
 }
-loadSearchResults('pizza')
+ //loadSearchResults('pizza')
+ export const getSearchResultsPage = function(page)
+ {  
+     const start = (page - 1)* 10;//0;
+     const end  =page * 10; //9;
+
+     return state.search.results.slice(start, end);
+ }
