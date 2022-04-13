@@ -41,7 +41,8 @@ const controlRecipes= async function() {
 
      
 //rendering recipe
-recipeView.render(model.state.results)
+//recipeView.render(model.state.results)
+resultsview.render(model.getSearchResultsPage(1))
 
 
 
