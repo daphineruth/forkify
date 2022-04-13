@@ -7,7 +7,8 @@ import { state } from '../../../starter fle/complete-javascript-course/18-forkif
     recipe: {},
     search: {
         query: '',
-        results: []
+        results: [],
+        resultsPerPage : 10,
     },
 
 };
@@ -64,8 +65,8 @@ export const loadSearchResults = async function (query) {
  //loadSearchResults('pizza')
  export const getSearchResultsPage = function(page)
  {  
-     const start = (page - 1)* 10;//0;
-     const end  =page * 10; //9;
+     const start = (page - 1)* state.search.resultsPerPage;//0;
+     const end  =page * state.search.resultsPerPage; //9;
 
      return state.search.results.slice(start, end);
  }
