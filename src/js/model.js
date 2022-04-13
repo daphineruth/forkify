@@ -1,6 +1,6 @@
 import { async } from 'regenerator-runtime';
 import { getJSON } from './helpers.js';
-import { API_URL } from './config.js';
+import { API_URL , RES_PER_PAGE} from './config.js';
 import { search } from 'core-js/fn/symbol';
 import { state } from '../../../starter fle/complete-javascript-course/18-forkify/final/src/js/model.js';
  export const view = {
@@ -8,7 +8,7 @@ import { state } from '../../../starter fle/complete-javascript-course/18-forkif
     search: {
         query: '',
         results: [],
-        resultsPerPage : 10,
+        resultsPerPage : RES_PER_PAGE,
     },
 
 };
