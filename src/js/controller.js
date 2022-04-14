@@ -48,7 +48,7 @@ resultsview.render(model.getSearchResultsPage());
 
 
 
-
+PaginationView.render(model.state.search);
               
   } catch(err){
     alert(err)
