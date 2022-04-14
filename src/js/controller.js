@@ -6,6 +6,8 @@ import searchView from './views/searchView.js';
 
 import resultsview from './views/resultsview.js';
 
+import PaginationView from './views/pagination.js';
+
 //import icons  from '../img/icons.svg';//parcel 1
 
 //import icons  from 'url:../img/icons.svg';// parcel 2
