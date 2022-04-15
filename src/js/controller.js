@@ -57,6 +57,10 @@ PaginationView.render(model.state.search);
 
 }
 
+const controlPagination = function (){
+  
+}
+
 const controlSearchResults = async function() {
 
   try{
