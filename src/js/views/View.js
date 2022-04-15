@@ -14,6 +14,12 @@ if(!data || (Array.isArray(data) && data.length === 0))return this.renderError()
   _clear() {
     this._parentElement.innerHTML = '';
   }
+  update(data) {
+    this._data = data;
+    const newMarkup = this._generateMarkup();
+
+    const newDOM = document.createRange().createContextualFragment(newMarkup);
+  }
    renderSpinner() {
     const markup = `
     <div class="spinner">
