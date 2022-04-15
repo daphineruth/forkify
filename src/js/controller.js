@@ -57,9 +57,9 @@ PaginationView.render(model.state.search);
 
 }
 
-const controlPagination = function (goToPage){
+//const controlPagination = function (goToPage){
 
-}
+//}
 
 const controlSearchResults = async function() {
 
@@ -72,7 +72,15 @@ await model.loadSearchResults('query');
   }catch(err){
     console.log(err)
   }
-}
+};
+
+const controlPagination = function (goToPage) {
+  // 1) Render NEW results
+  resultsView.render(model.getSearchResultsPage(goToPage));
+
+  // 2) Render NEW pagination buttons
+  paginationView.render(model.state.search);
+};
 controlSearchRecipe();
 
 const init = function() {
