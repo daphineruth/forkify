@@ -90,14 +90,21 @@ const controlServings = function  (newServings){
   //update recipe servings
 recipe.update(model.updateServings(newServings));
   //update recipe view
+
+  const controlAddBookmark = function (){
+    model.addBookmark(model.state.recipe);
+    console.log(model.state.recipe);
+    recipeView.update(model.state.recipe);
+  }
 }
 
 
 const init = function() {
 recipeView.addHandlerRender(controlRecipes )
 recipeView.addHandlerUpdateServings(controlServings);
+recipeView.addHandlerAddBookmark(controlAddBookmark);
 searchView.addHandlerSearch(controlSearchResults);
 paginationView.addHandlerClick(controlPagination);
-controlServings();
+
 }
 init()
