@@ -11,7 +11,7 @@ class PaginationView extends View  {
          const numPages = math.ceil(this._data.results.length / this.data. resultsPerPage);
 
         //first page and there are other pages
-        if (curPage === 1 && numPages > 1){
+        if (curPage === 1 && numPages > 1) {
             return `
             <button class="btn--inline pagination__btn--next">
             <span>${curPage + 1}</span>
@@ -24,10 +24,10 @@ class PaginationView extends View  {
         }
 
        //first page and there are no other pages
-       return'only one page'
+       return ''
 
        //last page
-       if (curPage === numPages && numPages > 1){
+       if (curPage === numPages && numPages > 1) {
            return `
            <button class="btn--inline pagination__btn--prev">
            <svg class="search__icon">
@@ -40,7 +40,23 @@ class PaginationView extends View  {
 
        //other pages
        if (curPage < numPages) {
-           return 'other page'
+           return 
+           `
+           <button class="btn--inline pagination__btn--prev">
+           <svg class="search__icon">
+             <use href="${icons}#icon-arrow-left"></use>
+           </svg>
+           <span>Page ${curPage - 1}</span>
+         </button>
+
+         <button class="btn--inline pagination__btn--next">
+         <span>${curPage + 1}</span>
+         <svg class="search__icon">
+           <use href="${icons}#icon-arrow-right"></use>
+         </svg>
+       </button>
+
+           `
        }
     }
 }
