@@ -12,6 +12,7 @@ import { state } from '../../../starter fle/complete-javascript-course/18-forkif
         resultsPerPage : RES_PER_PAGE,
     },
 
+bookmarks: [],
 };
 
 export const loadRecipe = async function(id){
@@ -53,8 +54,10 @@ export const loadSearchResults = async function (query) {
       publisher: recipe.publisher,
       sourceUrl: recipe.sourceUrl,
       Image: recipe.Image_url
-     }
- })
+     };
+     
+ });
+
     
     state.search.page = 1;
  } catch(err)
@@ -73,11 +76,20 @@ export const loadSearchResults = async function (query) {
      const end  =page * state.search.resultsPerPage; //9;
 
      return state.search.results.slice(start, end);
- }
+ };
  export const updateServings = function (newServings){
     state.recipe.ingredients.forEach(ing => {
         ing.quantity = (ing.quantity * newServings) / state.recipe.servings;
         
- })
+ });
  state.recipe.servings = newServings;
-}
+};
+
+export const addBookmark = function (recipe) {
+    // Add bookmark
+    state.bookmarks.push(recipe);
+  
+    // Mark current recipe as bookmarked
+    if (recipe.id === state.recipe.id) state.recipe.bookmarked = true;
+  
+};
