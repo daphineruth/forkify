@@ -92,8 +92,14 @@ recipe.update(model.updateServings(newServings));
   //update recipe view
 
   const controlAddBookmark = function (){
-    model.addBookmark(model.state.recipe);
-    console.log(model.state.recipe);
+    if (!model.state.recipe.bookmarked) model.addBookmark(model.state.recipe);
+    
+  else model.deleteBookmark(model.state.recipe.id);
+
+    
+    //console.log(model.state.recipe);
+
+    //updating recipeView
     recipeView.update(model.state.recipe);
   }
 }
