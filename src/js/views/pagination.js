@@ -12,7 +12,15 @@ class PaginationView extends View  {
 
         //first page and there are other pages
         if (curPage === 1 && numPages > 1){
-            return 'page 1 others'
+            return `
+            <button class="btn--inline pagination__btn--next">
+            <span>${curPage + 1}</span>
+            <svg class="search__icon">
+              <use href="${icons}#icon-arrow-right"></use>
+            </svg>
+          </button>
+
+            `;
         }
 
        //first page and there are no other pages
