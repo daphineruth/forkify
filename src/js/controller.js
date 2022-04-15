@@ -58,7 +58,7 @@ PaginationView.render(model.state.search);
 }
 
 const controlPagination = function (){
-  
+
 }
 
 const controlSearchResults = async function() {
@@ -78,5 +78,6 @@ controlSearchRecipe();
 const init = function() {
 recipeView.addHandlerRender(controlRecipes )
 searchView.addHandlerSearch(controlSearchResults);
+paginationView.addHandlerClick(controlPagination);
 }
 init()
