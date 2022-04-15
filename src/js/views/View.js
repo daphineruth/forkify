@@ -11,9 +11,7 @@ if(!data || (Array.isArray(data) && data.length === 0))return this.renderError()
     
       }
     
-  _clear() {
-    this._parentElement.innerHTML = '';
-  }
+  
   update(data) {
     this._data = data;
     const newMarkup = this._generateMarkup();
@@ -22,6 +20,17 @@ if(!data || (Array.isArray(data) && data.length === 0))return this.renderError()
     const newElements = Array.from(newDOM.querySelectorAll('*'));
     const curElements = Array.from(this._parentElement.querySelectorAll('*'));
 
+    newElements.forEach((newEl, i) => {
+      const curEl = curElements[i];
+       console.log(curEl, newEl.isEqualNode(curEl));
+    })
+  }
+  
+
+
+  
+  _clear() {
+    this._parentElement.innerHTML = '';
   }
    renderSpinner() {
     const markup = `
