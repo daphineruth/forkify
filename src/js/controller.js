@@ -57,7 +57,7 @@ PaginationView.render(model.state.search);
 
 }
 
-const controlPagination = function (){
+const controlPagination = function (goToPage){
 
 }
 
