@@ -55,8 +55,9 @@ export const loadSearchResults = async function (query) {
       Image: recipe.Image_url
      }
  })
-    }
-    catch(err)
+    
+    state.search.page = 1;
+ } catch(err)
     {
         console.log(err);
         throw err;
