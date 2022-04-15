@@ -11,7 +11,14 @@ import { Fraction}  from 'fractional';
   _errorMessage = 'could not find the recipe';
   _message = '';
 
-  
+  addHandlerRender(handler) {
+    this._parentElement.addEventListener('click', function(e){
+      const btn = e.target.closest('.btn--tiny ');
+      if (!btn) return;
+      handler()
+      console.log(btn)
+    })
+  }
   _generateMarkup()
   
   {
