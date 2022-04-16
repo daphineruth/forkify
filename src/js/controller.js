@@ -6,6 +6,8 @@ import searchView from './views/searchView.js';
 
 import resultsview from './views/resultsview.js';
 
+import BookmarksView from './views/bookmarksView.js';
+
 import PaginationView from './views/pagination.js';
 
 //import icons  from '../img/icons.svg';//parcel 1
@@ -39,6 +41,9 @@ const controlRecipes= async function() {
 
     //upadating recipeview
     resultsView.update(model.getSearchResultsPage());
+
+    // 1) Updating bookmarks view
+    bookmarksView.update(model.state.bookmarks);
 
 
 ////loading recipe
@@ -100,7 +105,11 @@ recipe.update(model.updateServings(newServings));
     //console.log(model.state.recipe);
 
     //updating recipeView
-    recipeView.update(model.state.recipe);
+    //recipeView.update(model.state.recipe);
+
+    //rendering the bookmarks
+
+    bookmarksView.render(model.state.bookmarks);
   }
 }
 
