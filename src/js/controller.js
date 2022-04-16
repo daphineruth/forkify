@@ -118,7 +118,17 @@ recipe.update(model.updateServings(newServings));
   };
   
   const controlAddRecipe = async function (newRecipe) {
-    
+
+        // Upload the new recipe data
+        try{
+        await model.uploadRecipe(newRecipe);
+        console.log(model.state.recipe);
+
+      } catch (err) {
+        console.error('💥', err);
+        
+      }
+
   }
 }
 
