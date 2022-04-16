@@ -124,8 +124,17 @@ recipe.update(model.updateServings(newServings));
         // Upload the new recipe data
 
         try{
+
+           // loading spinner
+    addRecipeView.renderSpinner();
+
+
         await model.uploadRecipe(newRecipe);
         console.log(model.state.recipe);
+
+      // Success message
+    addRecipeView.renderMessage();
+
 
        //render bookmark view
         recipeView.render(model.state.bookmarks);
@@ -133,7 +142,7 @@ recipe.update(model.updateServings(newServings));
         setTimeout(function () {
           addRecipeView.toggleWindow();
         }, MODAL_CLOSE_SEC * 1000);
-        
+
       } catch (err) {
         console.error('💥', err);
         
