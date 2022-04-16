@@ -36,8 +36,8 @@ bookmarks: [],
       serving: recipe.serving,
       cookingTime: recipe.cooking_time,
       ingredients: recipe.ingredients
-    },
-} 
+    }
+
 export const loadRecipe = async function(id){
     try{
         const data = await getJSON(`${API_URL}/${id}>`);
