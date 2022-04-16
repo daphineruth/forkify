@@ -16,16 +16,18 @@ import { state } from '../../../starter fle/complete-javascript-course/18-forkif
 bookmarks: [],
 };
 
-export const loadRecipe = async function(id){
-    try{
-        const data = await getJSON(`${API_URL}/${id}>`);
+
     
-    
+    const createRecipeObject = function (data) {
+            
+            
     const { recipe } = data.data;
 
-   // let (recipe) = data.data;
 
-    state.recipe = {
+   // let (recipe) = data.data;
+   return{
+
+    
       id: recipe.id,
       title: recipe.title,
       publisher: recipe.publisher,
@@ -34,7 +36,12 @@ export const loadRecipe = async function(id){
       serving: recipe.serving,
       cookingTime: recipe.cooking_time,
       ingredients: recipe.ingredients
-    }
+    },
+} 
+export const loadRecipe = async function(id){
+    try{
+        const data = await getJSON(`${API_URL}/${id}>`);
+    
     if (state.bookmarks.some(bookmark => bookmark.id === id))
     state.recipe.bookmarked = true;
   else state.recipe.bookmarked = false;
