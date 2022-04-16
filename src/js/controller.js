@@ -117,6 +117,9 @@ recipe.update(model.updateServings(newServings));
     bookmarksView.render(model.state.bookmarks);
   };
   
+  const controlAddRecipe = async function (newRecipe) {
+    
+  }
 }
 
 
