@@ -1,4 +1,6 @@
-import * as model from'./model.js'
+import * as model from'./model.js';
+
+import { MODAL_CLOSE_SEC } from './config.js';
 
 import recipeView from './views/recipeView.js';
 
@@ -120,10 +122,18 @@ recipe.update(model.updateServings(newServings));
   const controlAddRecipe = async function (newRecipe) {
 
         // Upload the new recipe data
+
         try{
         await model.uploadRecipe(newRecipe);
         console.log(model.state.recipe);
 
+       //render bookmark view
+        recipeView.render(model.state.bookmarks);
+
+        setTimeout(function () {
+          addRecipeView.toggleWindow();
+        }, MODAL_CLOSE_SEC * 1000);
+        
       } catch (err) {
         console.error('💥', err);
         
