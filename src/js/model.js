@@ -35,7 +35,8 @@ bookmarks: [],
       Image: recipe.Image_url,
       serving: recipe.serving,
       cookingTime: recipe.cooking_time,
-      ingredients: recipe.ingredients
+      ingredients: recipe.ingredients,
+      ...(recipe.key && {key:recipe.key}),
     }
 
 }
