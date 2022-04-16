@@ -2,6 +2,7 @@ import { async } from 'regenerator-runtime';
 import { getJSON } from './helpers.js';
 import { API_URL , RES_PER_PAGE} from './config.js';
 import { search } from 'core-js/fn/symbol';
+import { sendJSON } from './helpers.js';
 import { state } from '../../../starter fle/complete-javascript-course/18-forkify/final/src/js/model.js';
  export const view = {
     recipe: {},
@@ -131,6 +132,16 @@ const init = function () {
           return { quantity: quantity ? +quantity : null, unit, description };
       });
     
+      const recipe = {
+        title: newRecipe.title,
+        source_url: newRecipe.sourceUrl,
+        image_url: newRecipe.image,
+        publisher: newRecipe.publisher,
+        cooking_time: +newRecipe.cookingTime,
+        servings: +newRecipe.servings,
+        ingredients,
+      };
+
     } catch (err) {
         throw err;
       } 
