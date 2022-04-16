@@ -8,6 +8,8 @@ import resultsview from './views/resultsview.js';
 
 import BookmarksView from './views/bookmarksView.js';
 
+import addRecipeView from './views/addRecipeView.js';
+
 import PaginationView from './views/pagination.js';
 
 //import icons  from '../img/icons.svg';//parcel 1
