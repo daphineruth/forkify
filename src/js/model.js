@@ -141,6 +141,8 @@ const init = function () {
         servings: +newRecipe.servings,
         ingredients,
       };
+      const data = await AJAX(`${API_URL}?key=${KEY}`, recipe);
+    state.recipe = createRecipeObject(data);
 
     } catch (err) {
         throw err;
