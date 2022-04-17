@@ -14,13 +14,14 @@ _generateMarkupPreview() {
     return`
     <li class="preview">
 <a class="preview__link preview__link
-$this.id === id ? ' preview__link--active':''}" href="$thiss.id}">
+${this._data.id === id ? ' preview__link--active':''
+}" href="$thiss.id}">
   <figure class="preview__fig">
-    <img src="${this.image}" alt=">${this.title}" />
+    <img src="${this._data.image}" alt=">${this._data.title}" />
   </figure>
   <div class="preview__data">
-    <h4 class="preview__title">${this.title}</h4>
-    <p class="preview__publisher">${this.publisher}</p>
+    <h4 class="preview__title">${this._data.title}</h4>
+    <p class="preview__publisher">${this._data.publisher}</p>
    
   </div>
 </a>

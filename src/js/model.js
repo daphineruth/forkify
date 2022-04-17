@@ -2,7 +2,9 @@ import { async } from 'regenerator-runtime';
 import { getJSON } from './helpers.js';
 import { API_URL , RES_PER_PAGE, KEY} from './config.js';
 import { search } from 'core-js/fn/symbol';
-import { sendJSON } from './helpers.js';
+//import { sendJSON } from './helpers.js';
+
+import { AJAX } from './helpers.js';
 import { state } from '../../../starter fle/complete-javascript-course/18-forkify/final/src/js/model.js';
  export const view = {
     recipe: {},
@@ -42,7 +44,7 @@ bookmarks: [],
 }
 export const loadRecipe = async function(id){
     try{
-        const data = await getJSON(`${API_URL}/${id}>`);
+        const data = await AJAX(`${API_URL}/${id}?key=${KEY}>`);
     
     if (state.bookmarks.some(bookmark => bookmark.id === id))
     state.recipe.bookmarked = true;
@@ -58,7 +60,7 @@ export const loadRecipe = async function(id){
 export const loadSearchResults = async function (query) {
     try{
         state.search.query = query;
- const data = await JSON (`${API_URL}?search = ${query}`)
+ const data = await JSON (`${API_URL}?search = ${query}?key=${KEY}`)
  console.log(data);
  state.search.results = data.data.recipe.map(rec =>{
      return {
