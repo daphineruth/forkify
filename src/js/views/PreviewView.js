@@ -9,7 +9,7 @@ class PreviewView extends View  {
   
 
  
-_generateMarkupPreview() {
+  _generateMarkupPreview() {
   const id = window.location.hash.slice(1);
     return`
     <li class="preview">

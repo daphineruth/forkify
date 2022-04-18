@@ -34,7 +34,7 @@ import { Fraction}  from 'fractional';
   _generateMarkup()
   
   {
-return
+
     return `
     <figure class="recipe__fig">
      <img src= "${this.#data.Image}" alt="${this.#data.title}" class="recipe__img" />
