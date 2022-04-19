@@ -18,7 +18,7 @@ import { Fraction}  from 'fractional';
       const  {updateTo}= btn.dataset;
 
       if(+updateTo > 0) handler(+updateTo)
-      console.log(btn)
+     // console.log(btn)
     })
   }
   addHandlerAddBookmark(handler){
@@ -59,8 +59,7 @@ import { Fraction}  from 'fractional';
       <span class="recipe__info-text">servings</span> 
 
       <div class="recipe__info-buttons">
-      <button class="btn--tiny btn--update-servings "data-update-to="${
-        this._data.servings - 1}">
+      <button class="btn--tiny btn--update-servings "data-update-to="${ this._data.servings - 1}">
                 <svg>
                   <use href="${icons}#icon-minus-circle"></use>
                 </svg>
@@ -93,6 +92,7 @@ import { Fraction}  from 'fractional';
         <div class="recipe__ingredients">
           <h2 class="heading--2">Recipe ingredients</h2>
           <ul class="recipe__ingredient-list">
+          
           ${this._data.ingredients.map(this._generateMarkupIngredient) .join('')};
             
 

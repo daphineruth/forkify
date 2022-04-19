@@ -147,7 +147,7 @@ recipe.update(model.updateServings(newServings));
         }, MODAL_CLOSE_SEC * 1000);
 
       } catch (err) {
-        console.error('💥', err);
+        console.error( err);
         
       }
 
